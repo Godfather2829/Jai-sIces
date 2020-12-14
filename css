@@ -135,10 +135,10 @@ img {
   right: 0;
   left: 0;
   background: white;
-  transform: skewY(-6deg);
-  -webkit-transform: skewY(-6deg);
-  -moz-transform: skewY(-6deg);
-  -ms-transform: skewY(-6deg);
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
 }
 
 /*stats*/
@@ -164,6 +164,10 @@ img {
   align-items: center;
 }
 
+.stats-heading h3 {
+  text-align: center;
+}
+
 /*Flavours*/
 .flavours .grid {
   grid-template-columns: repeat(3 1fr);
@@ -171,13 +175,17 @@ img {
 }
 
 .flavours .grid > *:first-child {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 3;
 }
 
 .flavours img {
   height: 300px;
   width: 500px;
+}
+
+.flavours h3 {
+  text-align: center;
 }
 
 /*Facts*/
@@ -216,10 +224,11 @@ img {
 .flavours-head img {
   width: 500px;
   justify-self: flex-end;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
 .flavours-sub-head img {
-  width: 300px;
+  max-width: 100%;
   justify-self: flex-end;
 }
 
@@ -229,6 +238,17 @@ img {
 
 .flavours-main .grid {
   padding: 30px;
+  grid-template-columns: 2fr 4fr;
+}
+
+.flavours-head p,
+.locations-head p,
+.locations-head h1,
+.flavours-head h1 {
+  padding: 8px 8px;
+}
+
+.flavours-sub-head .container .grid {
   grid-template-columns: 2fr 4fr;
 }
 
@@ -242,8 +262,9 @@ img {
 
 /* Locations*/
 .locations-head img {
-  width: 300px;
+  width: 500px;
   justify-self: flex-end;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }
 
 .locations .flex {
@@ -471,26 +492,6 @@ img {
   margin: 4rem 0;
 }
 
-.m-1 {
-  margin: 1rem 0;
-}
-
-.m-2 {
-  margin: 1.5rem;
-}
-
-.m-3 {
-  margin: 2rem;
-}
-
-.m-4 {
-  margin: 3rem;
-}
-
-.m-5 {
-  margin: 4rem;
-}
-
 /*Padding*/
 .py-1 {
   padding: 1rem 0;
@@ -566,6 +567,11 @@ img {
     grid-row: 1;
   }
 
+  .flavours-head .flex,
+  .locations-head .flex {
+    flex-direction: column;
+  }
+
   .navbar .logo {
     height: 200px;
     width: auto;
@@ -581,6 +587,7 @@ img {
   .flavours-sub-head img,
   .locations-head img {
     justify-self: center;
+    width: 350px;
   }
 
   .flavours-main .grid > *:first-child .flavours-main .grid > *:nth-child(2) {
@@ -591,7 +598,7 @@ img {
 /* Mobile */
 @media (max-width: 500px) {
   .navbar {
-    height: 110px;
+    height: 150px;
   }
 
   .navbar .flex {
@@ -609,7 +616,11 @@ img {
 
   .navbar .logo {
     height: 100px;
-    overflow: hidden;
     display: grid;
+  }
+
+  .flavours-head img,
+  .locations-head img {
+    width: 250px;
   }
 }
